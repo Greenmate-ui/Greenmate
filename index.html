@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greenmate – Your Green Buddy</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/qrious/dist/qrious.min.js"></script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="hero">
+    <img src="logo.jpg" alt="Greenmate Logo" class="logo" />
+    <h1>Greenmate</h1>
+    <p class="tagline">Your Green Buddy, Forever Rooted with You 🌱</p>
+  </header>
+
+  <!-- About Section -->
+  <section class="about">
+    <h2>About Us</h2>
+    <p>
+      Welcome to <b>Greenmate</b> – Your Green Buddy, Forever Rooted with You.  
+      At Greenmate, we believe plants are more than just décor – they are companions that bring peace, positivity, and life into your space.  
+      Our mission is to make plant ownership simple, enjoyable, and sustainable.  
+      We offer a wide range of indoor and outdoor plants curated for homes, offices, and gifting, along with high-quality pots, soil, and accessories to complete your green corner.  
+      Every plant you purchase comes with a unique QR code that connects you to a personalized digital care guide, monthly checklist, and seasonal tips, ensuring your plant thrives all year round.  
+      Choosing Greenmate means choosing effortless plant care, sustainable living, and the joy of nurturing a companion that grows with you. 🌿
+    </p>
+  </section>
+
+  <!-- Shop Section -->
+  <section class="shop">
+    <h2>Our Plants</h2>
+    <div class="plant-card">
+      <img src="images/sample-plant.jpg" alt="Sample Plant" />
+      <h3>Plant Name</h3>
+      <p>Short description of this plant...</p>
+      <canvas id="qr-plant1"></canvas>
+      <script>
+        const qr1 = new QRious({
+          element: document.getElementById("qr-plant1"),
+          value: "plant-template.html", // link to plant details page
+          size: 100
+        });
+      </script>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:greenmate@gmail.com">greenmate@gmail.com</a></p>
+    <p>WhatsApp: <a href="https://wa.me/919876543210" target="_blank">Chat with us</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Greenmate.
