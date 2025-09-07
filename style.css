@@ -1,0 +1,92 @@
+:root{
+  --green-1: #4caf50;
+  --green-2: #2e7d32;
+  --bg: #f6fff6;
+  --card: #ffffff;
+  --muted: #6b6b6b;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background:var(--bg);
+  color:#222;
+  -webkit-font-smoothing:antialiased;
+}
+
+.hero{
+  text-align:center;
+  padding:3rem 1rem;
+  background: linear-gradient(90deg, var(--green-1), var(--green-2));
+  color:#fff;
+}
+.hero.small{ padding:1.6rem 1rem; }
+.logo{
+  width:110px;
+  height:110px;
+  object-fit:cover;
+  border-radius:18px;
+  border:4px solid rgba(255,255,255,0.12);
+  display:block;
+  margin:0 auto 0.8rem;
+}
+.tagline{ margin:0.3rem 0 0; font-weight:600; opacity:0.95; }
+
+section{ padding:2rem 1rem; max-width:1100px; margin:0 auto; }
+h2{ color:var(--green-2); margin-bottom:0.6rem; }
+
+.about p{ max-width:900px; margin:0 auto; color:#234; font-size:1rem; line-height:1.6; }
+
+.shop{ background:linear-gradient(180deg, rgba(255,255,255,0.6), transparent); }
+
+.plant-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap:1.25rem;
+  margin-top:1rem;
+}
+
+.plant-card{
+  background:var(--card);
+  border-radius:12px;
+  padding:1rem;
+  box-shadow: 0 6px 18px rgba(26,41,22,0.06);
+  text-align:center;
+}
+.plant-card img{ width:100%; height:160px; object-fit:cover; border-radius:8px; }
+.plant-card h3{ margin:0.6rem 0 0.25rem; }
+.plant-card .muted{ color:var(--muted); font-size:0.95rem; margin:0.25rem 0; }
+
+canvas.qr-code{ display:block; margin:0.7rem auto; }
+
+.btn{
+  display:inline-block;
+  background:var(--green-1);
+  color:#fff;
+  padding:0.55rem 0.95rem;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  transition:transform .12s ease, box-shadow .12s ease;
+}
+.btn:hover{ transform:translateY(-3px); box-shadow:0 8px 20px rgba(46,125,50,0.18); }
+
+.plant-details .plant-img{ width:100%; max-width:520px; height:auto; margin:0.6rem auto; display:block; border-radius:10px; }
+.plant-details ul{ text-align:left; display:inline-block; margin:0.5rem 0; padding-left:1.1rem; }
+
+.contact a{ color:var(--green-2); font-weight:600; text-decoration:none; }
+
+footer{
+  padding:1rem;
+  text-align:center;
+  background:var(--green-2);
+  color:#fff;
+  margin-top:1.5rem;
+}
+
+@media (max-width:540px){
+  .logo{ width:86px; height:86px; }
+  .plant-card img{ height:140px; }
+  section{ padding:1.25rem; }
+}
