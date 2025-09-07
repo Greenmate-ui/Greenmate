@@ -1,55 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Plant Guide — Replace with Plant Name</title>
-  <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/qrious/dist/qrious.min.js"></script>
-  <script src="script.js" defer></script>
-</head>
-<body>
-  <header class="hero small">
-    <img src="images/logo.jpg" alt="Greenmate logo" class="logo">
-    <h1>Plant Care Guide</h1>
-  </header>
-
-  <section class="plant-details">
-    <h2>Plant Name Here</h2>
-
-    <!-- Replace image file name with your plant image in /images -->
-    <img class="plant-img" src="images/sample-plant.jpg" alt="Plant picture">
-
-    <p><strong>Watering:</strong> e.g., Once a week (adjust by season).</p>
-    <p><strong>Sunlight:</strong> e.g., Bright indirect light.</p>
-    <p><strong>Soil:</strong> e.g., Well-draining potting mix with perlite.</p>
-
-    <h3>Monthly Checklist</h3>
-    <ul>
-      <li>Week 1: Water lightly</li>
-      <li>Week 2: Check soil moisture</li>
-      <li>Week 3: Rotate plant</li>
-      <li>Week 4: Fertilize (during growing season)</li>
-    </ul>
-
-    <h3>Seasonal Tips</h3>
-    <p>Reduce watering in winter. Increase humidity in summer if needed.</p>
-
-    <!-- Set data-link to the filename of this page (e.g. peace-lily.html) -->
-    <h3>Scan for Care</h3>
-    <canvas class="qr-code" data-link="peace-lily.html" aria-label="QR code"></canvas>
-
-    <a class="btn" href="https://wa.me/your-number-here" target="_blank" rel="noopener">Buy Now</a>
-  </section>
-
-  <footer>
-    <p>© 2025 Greenmate. All rights reserved.</p>
-  </footer>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Greenmate Plants</title>
@@ -80,15 +31,17 @@
     .product-card {
       background: white;
       border-radius: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
       width: 300px;
       text-align: center;
       padding: 20px;
-      transition: transform 0.3s;
+      position: relative;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .product-card:hover {
       transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
     .product-card img {
@@ -107,7 +60,7 @@
     }
 
     .product-card button {
-      margin-top: 15px;
+      margin-top: 10px;
       padding: 10px 20px;
       border: none;
       background: #4caf50;
@@ -121,52 +74,152 @@
       background: #45a049;
     }
 
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 20px 0;
-      margin-top: 40px;
+    .qr {
+      margin-top: 10px;
+      width: 100px;
+      height: 100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Popup Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 10% auto;
+      padding: 20px;
+      border-radius: 15px;
+      width: 80%;
+      max-width: 500px;
+      position: relative;
+      text-align: left;
+    }
+
+    .close {
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: black;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Greenmate – Your Green Buddy</h1>
-    <p>Forever Rooted with You</p>
-  </header>
+<header>
+  <h1>Greenmate – Your Green Buddy</h1>
+  <p>Forever Rooted with You</p>
+</header>
 
-  <section class="products">
-    <!-- Product 1 -->
-    <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1560185127-6b75c9f0e6b4" alt="Plant 1">
-      <h3>Fiddle Leaf Fig</h3>
-      <p>A popular indoor plant that loves indirect sunlight and adds a modern touch to any room.</p>
-      <button>Buy Now</button>
-    </div>
+<section class="products">
+  <!-- Product 1 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1560185127-6b75c9f0e6b4" alt="Fiddle Leaf Fig">
+    <h3>Fiddle Leaf Fig</h3>
+    <p>Loves indirect sunlight and adds a modern touch to any room.</p>
+    <button onclick="openModal('modal1')">View Care Guide</button>
+    <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://example.com/fiddle-leaf-fig" alt="QR Code">
+  </div>
 
-    <!-- Product 2 -->
-    <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1585325701958-9f76b1d32bbf" alt="Plant 2">
-      <h3>Snake Plant</h3>
-      <p>Low maintenance and air-purifying plant, perfect for beginners and offices.</p>
-      <button>Buy Now</button>
-    </div>
+  <!-- Product 2 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1585325701958-9f76b1d32bbf" alt="Snake Plant">
+    <h3>Snake Plant</h3>
+    <p>Low maintenance and air-purifying, perfect for beginners.</p>
+    <button onclick="openModal('modal2')">View Care Guide</button>
+    <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://example.com/snake-plant" alt="QR Code">
+  </div>
 
-    <!-- Product 3 -->
-    <div class="product-card">
-      <img src="https://images.unsplash.com/photo-1600370399378-ff7f6e36e0e3" alt="Plant 3">
-      <h3>Monstera Deliciosa</h3>
-      <p>Beautiful tropical plant with large leaves, ideal for stylish indoor spaces.</p>
-      <button>Buy Now</button>
-    </div>
-  </section>
+  <!-- Product 3 -->
+  <div class="product-card">
+    <img src="https://images.unsplash.com/photo-1600370399378-ff7f6e36e0e3" alt="Monstera Deliciosa">
+    <h3>Monstera Deliciosa</h3>
+    <p>Beautiful tropical plant with large leaves, ideal for stylish indoor spaces.</p>
+    <button onclick="openModal('modal3')">View Care Guide</button>
+    <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://example.com/monstera-deliciosa" alt="QR Code">
+  </div>
+</section>
 
-  <footer>
-    <p>&copy; 2025 Greenmate | All Rights Reserved</p>
-  </footer>
+<!-- Modals for Monthly Care Guide -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal1')">&times;</span>
+    <h2>Fiddle Leaf Fig - Monthly Care</h2>
+    <ul>
+      <li>Water once a week</li>
+      <li>Indirect sunlight only</li>
+      <li>Fertilize once a month</li>
+      <li>Wipe leaves to remove dust</li>
+    </ul>
+  </div>
+</div>
+
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal2')">&times;</span>
+    <h2>Snake Plant - Monthly Care</h2>
+    <ul>
+      <li>Water every 2-3 weeks</li>
+      <li>Bright indirect light or low light</li>
+      <li>Fertilize every 2 months</li>
+      <li>Wipe leaves occasionally</li>
+    </ul>
+  </div>
+</div>
+
+<div id="modal3" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal3')">&times;</span>
+    <h2>Monstera Deliciosa - Monthly Care</h2>
+    <ul>
+      <li>Water once a week</li>
+      <li>Bright indirect sunlight</li>
+      <li>Fertilize monthly</li>
+      <li>Support with stakes if needed</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; 2025 Greenmate | All Rights Reserved</p>
+</footer>
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = "block";
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+
+  // Close modal when clicking outside
+  window.onclick = function(event) {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    });
+  }
+</script>
 
 </body>
 </html>
-
