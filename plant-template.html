@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Plant Guide — Replace with Plant Name</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/qrious/dist/qrious.min.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="hero small">
+    <img src="images/logo.jpg" alt="Greenmate logo" class="logo">
+    <h1>Plant Care Guide</h1>
+  </header>
+
+  <section class="plant-details">
+    <h2>Plant Name Here</h2>
+
+    <!-- Replace image file name with your plant image in /images -->
+    <img class="plant-img" src="images/sample-plant.jpg" alt="Plant picture">
+
+    <p><strong>Watering:</strong> e.g., Once a week (adjust by season).</p>
+    <p><strong>Sunlight:</strong> e.g., Bright indirect light.</p>
+    <p><strong>Soil:</strong> e.g., Well-draining potting mix with perlite.</p>
+
+    <h3>Monthly Checklist</h3>
+    <ul>
+      <li>Week 1: Water lightly</li>
+      <li>Week 2: Check soil moisture</li>
+      <li>Week 3: Rotate plant</li>
+      <li>Week 4: Fertilize (during growing season)</li>
+    </ul>
+
+    <h3>Seasonal Tips</h3>
+    <p>Reduce watering in winter. Increase humidity in summer if needed.</p>
+
+    <!-- Set data-link to the filename of this page (e.g. peace-lily.html) -->
+    <h3>Scan for Care</h3>
+    <canvas class="qr-code" data-link="peace-lily.html" aria-label="QR code"></canvas>
+
+    <a class="btn" href="https://wa.me/your-number-here" target="_blank" rel="noopener">Buy Now</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Greenmate. All rights reserved.</p>
+  </footer>
+</body>
+</html>
