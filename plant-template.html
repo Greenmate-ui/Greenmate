@@ -47,3 +47,126 @@
   </footer>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greenmate Plants</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #f0f8f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #4caf50;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .products {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 40px 20px;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      width: 300px;
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .product-card h3 {
+      margin: 15px 0 10px 0;
+      color: #333;
+    }
+
+    .product-card p {
+      color: #666;
+      font-size: 14px;
+    }
+
+    .product-card button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      border: none;
+      background: #4caf50;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .product-card button:hover {
+      background: #45a049;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Greenmate – Your Green Buddy</h1>
+    <p>Forever Rooted with You</p>
+  </header>
+
+  <section class="products">
+    <!-- Product 1 -->
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1560185127-6b75c9f0e6b4" alt="Plant 1">
+      <h3>Fiddle Leaf Fig</h3>
+      <p>A popular indoor plant that loves indirect sunlight and adds a modern touch to any room.</p>
+      <button>Buy Now</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1585325701958-9f76b1d32bbf" alt="Plant 2">
+      <h3>Snake Plant</h3>
+      <p>Low maintenance and air-purifying plant, perfect for beginners and offices.</p>
+      <button>Buy Now</button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1600370399378-ff7f6e36e0e3" alt="Plant 3">
+      <h3>Monstera Deliciosa</h3>
+      <p>Beautiful tropical plant with large leaves, ideal for stylish indoor spaces.</p>
+      <button>Buy Now</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Greenmate | All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
+
